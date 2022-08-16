@@ -15,24 +15,20 @@
 
             Cenário: Usuário com senha inválida
             Quando eu digitar o usuário "cecilia@ebac.com.br"
-            E a senha "qwwerty"
-            Então deve exibir uma mensagem de alerta "Usuário ou senha inválidos"
+            E a senha "qwwerty44"
+            Então deve exibir uma mensagem de alerta "Usuário ou senha inválidos!"
 
             Cenário: Usuário inexistente
-            Quando eu digitar o usuário "cecilia_pessoa"
+            Quando eu digitar o usuário "ewererretret@ebac.com"
             E a senha "abc@123"
-            Então deve exibir uma mensagem de alerta "Usuário ou senha inválidos"
+            Então deve exibir uma mensagem de alerta "Usuário não existe!"
 
-            Esquema do Cenário: Autenticação válida de vários usuários
+            Esquema do Cenário: Validar autenticações inválidas
             Quando eu digitar o <usuario>
             E a <senha>
-            Então deve direcionar para a tela de checkout
+            Então deve exibir uma mensagem de alerta <mensagem>
 
             Exemplos:
-            | usuario               | senha      |
-            | "cecilia@ebac.com.br" | "abc@123"  |
-            | "maria@ebac.com.br"   | "Qwe12!@"  |
-            | "matheus@ebac.com.br" | "abc@123"  |
-            | "marcos@ebac.com.br"  | "345Asd!#" |
-            | "luccas@ebac.com.br"  | "abc@123"  |
-            | "joão@ebac.com.br"    | "890*Uio"  |
+            | usuario                 | senha       | mensagem                      |
+            | "cecilia@ebac.com.br"   | "qwwerty44" | "Usuário ou senha inválidos!" |
+            | "ewererretret@ebac.com" | "abc@123"   | "Usuário não existe!"         |
